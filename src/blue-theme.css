@@ -1,0 +1,110 @@
+/* Дополнительные стили для синего дизайна с желтыми акцентами */
+
+/* Удалены body { background: ... } и body.dark { ... } чтобы не мешать Tailwind */
+
+/* Остальные стили без глобального фона */
+
+/* Карточки с синими тонами */
+.blue-card {
+  background: rgba(30, 58, 138, 0.9);
+  border: 1px solid #fbbf24;
+  box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.2);
+}
+
+/* Кнопки с желтым градиентом */
+.blue-gradient-btn {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  color: #1e3a8a;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.blue-gradient-btn:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+/* Текст с желтым градиентом */
+.blue-gradient-text {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Желтые акценты */
+.blue-accent {
+  color: #fbbf24;
+}
+
+.blue-accent-bg {
+  background-color: #1e3a8a;
+}
+
+/* Ховер эффекты */
+.blue-hover:hover {
+  background-color: #fbbf24;
+  color: #1e3a8a;
+}
+
+/* Границы с желтыми тонами */
+.blue-border {
+  border-color: #fbbf24;
+}
+
+/* Тени с желтым оттенком */
+.blue-shadow {
+  box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.2), 0 2px 4px -1px rgba(251, 191, 36, 0.1);
+}
+
+/* Анимация появления с желтыми тонами */
+@keyframes blueFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    background-color: rgba(251, 191, 36, 0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: transparent;
+  }
+}
+
+.blue-fade-in {
+  animation: blueFadeIn 0.6s ease-out;
+}
+
+/* Синие фоны для секций */
+.blue-section {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.dark .blue-section {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+/* Инпут поля с желтыми акцентами */
+.blue-input {
+  border-color: #fbbf24;
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.blue-input:focus {
+  border-color: #fbbf24;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+/* Желтые кнопки */
+.blue-light-btn {
+  background-color: #fbbf24;
+  color: #1e3a8a;
+  border: 1px solid #fbbf24;
+}
+
+.blue-light-btn:hover {
+  background-color: #f59e0b;
+  color: #1e3a8a;
+} 

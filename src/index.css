@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "./blue-theme.css";
+
+:root {
+  /* Light theme - более светлые тона */
+  --toast-bg: #ffffff;
+  --toast-color: #1e40af;
+  --toast-border: #dbeafe;
+  
+  /* Custom scrollbar - синие тона */
+  --scrollbar-width: 8px;
+  --scrollbar-track: #eff6ff;
+  --scrollbar-thumb: #3b82f6;
+  --scrollbar-thumb-hover: #2563eb;
+}
+
+.dark {
+  /* Dark theme */
+  --toast-bg: #1f2937;
+  --toast-color: #f9fafb;
+  --toast-border: #374151;
+  
+  /* Custom scrollbar for dark mode */
+  --scrollbar-track: #374151;
+  --scrollbar-thumb: #6b7280;
+  --scrollbar-thumb-hover: #9ca3af;
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility - синие тона */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #1e40af;
+  outline-offset: 2px;
+}
+
+/* Animation for theme transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Image loading placeholder */
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+.dark .image-loading {
+  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Custom form styles - более светлые тона */
+.form-input {
+  @apply w-full px-4 py-3 border border-blue-200 dark:border-gray-600 rounded-lg 
+         bg-white dark:bg-gray-700 text-gray-900 dark:text-white
+         focus:ring-2 focus:ring-blue-500 focus:border-transparent
+         transition-all duration-200;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2;
+}
+
+.btn-primary {
+  @apply bg-blue-500 hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg
+         transition-all duration-200 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-blue-50 dark:bg-gray-700 hover:bg-blue-100 dark:hover:bg-gray-600 
+         text-blue-700 dark:text-white font-medium py-3 px-6 rounded-lg
+         transition-all duration-200 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2;
+}
+
+/* Card styles - более светлые тона */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-blue-100 dark:border-gray-700
+         transition-all duration-200;
+}
+
+.card-hover {
+  @apply hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Gradient text - более светлые синие тона */
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+}
+
+/* Loading spinner - синие тона */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-blue-200 border-t-blue-500 rounded-full animate-spin;
+}
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile responsive text */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+} 
