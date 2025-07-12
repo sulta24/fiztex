@@ -12,54 +12,55 @@ const SchoolLife = () => {
   const [errorText, setErrorText] = useState('')
 
   // Дефолтные элементы галереи (если нет данных в БД)
-  const defaultGalleryItems = [
+  const getDefaultGalleryItems = () => ([
     {
       id: 1,
       title: t('modernClassrooms'),
-      description: 'Оборудованные по последним стандартам учебные аудитории',
+      description: t('schoollife_modern_desc'),
       image_url: '/images/placeholder-classroom.jpg',
       category: 'facilities'
     },
     {
       id: 2,
       title: t('sportsActivities'),
-      description: 'Просторный спортивный зал для физкультуры и секций',
+      description: t('schoollife_sports_desc'),
       image_url: '/images/placeholder-sports.jpg',
       category: 'activities'
     },
     {
       id: 3,
       title: t('library'),
-      description: 'Богатая коллекция книг и комфортная зона для чтения',
+      description: t('schoollife_library_desc'),
       image_url: '/images/placeholder-library.jpg',
       category: 'facilities'
     },
     {
       id: 4,
       title: t('canteen'),
-      description: 'Здоровое и вкусное питание для всех учеников',
+      description: t('schoollife_canteen_desc'),
       image_url: '/images/placeholder-canteen.jpg',
       category: 'facilities'
     },
     {
       id: 5,
       title: t('events'),
-      description: 'Яркие школьные мероприятия и творческие выступления',
+      description: t('schoollife_events_desc'),
       image_url: '/images/placeholder-events.jpg',
       category: 'activities'
     },
     {
       id: 6,
       title: t('laboratory'),
-      description: 'Современное оборудование для изучения естественных наук',
+      description: t('schoollife_lab_desc'),
       image_url: '/images/placeholder-lab.jpg',
       category: 'facilities'
     }
-  ]
+  ])
 
   useEffect(() => {
     fetchGalleryItems()
-  }, [])
+    // eslint-disable-next-line
+  }, [t])
 
   const fetchGalleryItems = async () => {
     try {
@@ -74,12 +75,12 @@ const SchoolLife = () => {
         setGalleryItems(data)
         setErrorText('')
       } else {
-        setGalleryItems(defaultGalleryItems)
-        setErrorText('Нет данных в таблице gallery_items, используются дефолтные данные.')
+        setGalleryItems(getDefaultGalleryItems())
+        setErrorText(t('schoollife_no_data'))
       }
     } catch (error) {
-      setErrorText('Ошибка загрузки галереи: ' + (error.message || error.toString()))
-      setGalleryItems(defaultGalleryItems)
+      setErrorText(t('schoollife_error') + (error.message || error.toString()))
+      setGalleryItems(getDefaultGalleryItems())
     } finally {
       setLoading(false)
     }
@@ -120,7 +121,7 @@ const SchoolLife = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600 dark:text-gray-400">Загрузка...</p>
+            <p className="mt-4 text-gray-600 dark:text-gray-400">{t('schoollife_loading')}</p>
           </div>
         </div>
       </section>

@@ -13,30 +13,30 @@ const Admission = () => {
   ]
 
   const requirements = [
-    'Возраст на 1 сентября: для 1 класса - от 6,5 до 8 лет',
-    'Отсутствие медицинских противопоказаний к обучению',
-    'Готовность ребенка к школьному обучению (по результатам собеседования)',
-    'Для поступления в профильные классы - успешное прохождение вступительных испытаний',
-    'Наличие регистрации в закрепленном микрорайоне (для приема в 1 класс)'
+    t('requirement_age'),
+    t('requirement_medical'),
+    t('requirement_ready'),
+    t('requirement_profile'),
+    t('requirement_registration'),
   ]
 
   const specializedClasses = [
     {
-      name: 'Математический класс',
-      requirement: 'тестирование по математике и логике'
+      name: t('spec_math'),
+      requirement: t('spec_math_req'),
     },
     {
-      name: 'Лингвистический класс',
-      requirement: 'тестирование по русскому и английскому языкам'
+      name: t('spec_lang'),
+      requirement: t('spec_lang_req'),
     },
     {
-      name: 'Естественно-научный класс',
-      requirement: 'тестирование по математике и естествознанию'
+      name: t('spec_sci'),
+      requirement: t('spec_sci_req'),
     },
     {
-      name: 'Гуманитарный класс',
-      requirement: 'творческое задание и собеседование'
-    }
+      name: t('spec_hum'),
+      requirement: t('spec_hum_req'),
+    },
   ]
 
   const timelineItems = [

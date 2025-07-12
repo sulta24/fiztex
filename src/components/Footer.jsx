@@ -12,39 +12,39 @@ const Footer = () => {
       title: t('schoolAddress'),
       icon: FiMapPin,
       items: [
-        { label: 'Адрес', value: 'г. Алматы, ул. Школьная, д. 1' },
-        { label: 'Индекс', value: '050000' },
-        { label: 'Район', value: 'Алмалинский район' }
+        { label: t('footer_address'), value: t('footer_address_value') },
+        { label: t('footer_index'), value: t('footer_index_value') },
+        { label: t('footer_district'), value: t('footer_district_value') }
       ]
     },
     {
       title: t('contactPhones'),
       icon: FiPhone,
       items: [
-        { label: 'Приемная', value: '+7 (727) 123-45-67' },
-        { label: 'Директор', value: '+7 (727) 123-45-68' },
-        { label: 'Заместитель директора', value: '+7 (727) 123-45-69' },
-        { label: 'Приемная комиссия', value: '+7 (727) 123-45-70' }
+        { label: t('footer_reception'), value: t('footer_reception_value') },
+        { label: t('footer_director'), value: t('footer_director_phone') },
+        { label: t('footer_vice'), value: t('footer_vice_value') },
+        { label: t('footer_admission'), value: t('footer_admission_value') }
       ]
     },
     {
       title: t('emailContacts'),
       icon: FiMail,
       items: [
-        { label: 'Общий', value: 'info@phystech-almaty.edu.kz' },
-        { label: 'Директор', value: 'director@phystech-almaty.edu.kz' },
-        { label: 'Приемная комиссия', value: 'admission@phystech-almaty.edu.kz' },
-        { label: 'Техподдержка', value: 'support@phystech-almaty.edu.kz' }
+        { label: t('footer_general'), value: t('footer_general_email') },
+        { label: t('footer_director'), value: t('footer_director_email') },
+        { label: t('footer_admission'), value: t('footer_admission_email') },
+        { label: t('footer_support'), value: t('footer_support_email') }
       ]
     },
     {
-      title: 'Режим работы',
+      title: t('footer_working_hours'),
       icon: FiClock,
       items: [
-        { label: 'Понедельник - Пятница', value: '8:00 - 18:00' },
-        { label: 'Суббота', value: '9:00 - 15:00' },
-        { label: 'Воскресенье', value: 'Выходной' },
-        { label: 'Приемная', value: '8:30 - 17:30' }
+        { label: t('footer_mon_fri'), value: t('footer_mon_fri_value') },
+        { label: t('footer_sat'), value: t('footer_sat_value') },
+        { label: t('footer_sun'), value: t('footer_sun_value') },
+        { label: t('footer_reception'), value: t('footer_reception_hours') }
       ]
     }
   ]
@@ -166,12 +166,10 @@ const Footer = () => {
           >
             <div className="max-w-4xl mx-auto text-center">
               <h3 className="text-2xl font-bold text-[#1e3c72] dark:text-white mb-4">
-                PhysTech School Almaty
+                {t('footer_school_name')}
               </h3>
               <p className="text-gray-600 dark:text-white/80 leading-relaxed text-lg">
-                Современная школа с физико-математическим уклоном, где каждый ученик может раскрыть свой потенциал 
-                и получить качественное образование. Мы готовим будущих ученых, инженеров и лидеров в области 
-                точных наук и технологий.
+                {t('footer_school_desc')}
               </p>
             </div>
           </motion.div>
@@ -186,27 +184,27 @@ const Footer = () => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                   <div className="text-2xl font-bold text-[#1e3c72] dark:text-white">15+</div>
-                  <div className="text-sm text-gray-600 dark:text-white/70">лет опыта</div>
+                  <div className="text-sm text-gray-600 dark:text-white/70">{t('footer_years_exp')}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-[#1e3c72] dark:text-white">500+</div>
-                  <div className="text-sm text-gray-600 dark:text-white/70">учеников</div>
+                  <div className="text-sm text-gray-600 dark:text-white/70">{t('footer_students')}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-[#1e3c72] dark:text-white">50+</div>
-                  <div className="text-sm text-gray-600 dark:text-white/70">преподавателей</div>
+                  <div className="text-sm text-gray-600 dark:text-white/70">{t('footer_teachers')}</div>
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-[#1e3c72] dark:text-white">98%</div>
-                  <div className="text-sm text-gray-600 dark:text-white/70">поступление в вузы</div>
+                  <div className="text-sm text-gray-600 dark:text-white/70">{t('footer_university')}</div>
                 </div>
               </div>
 
               {/* Additional Info */}
               <div className="text-center md:text-right">
                 <div className="text-sm text-gray-600 dark:text-white/70 space-y-1">
-                  <div>Лицензия: АБ №0123456</div>
-                  <div>Аккредитация: СГ №0654321</div>
+                  <div>{t('footer_license')}</div>
+                  <div>{t('footer_accreditation')}</div>
                 </div>
               </div>
             </div>
@@ -223,17 +221,17 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="text-sm text-gray-600 dark:text-white/70">
-              &copy; 2025 PhysTech School Almaty. Все права защищены.
+              &copy; 2025 {t('footer_school_name')}. {t('footer_rights_reserved')}
             </div>
             <div className="flex items-center space-x-6 text-sm text-gray-600 dark:text-white/70">
               <a href="#" className="hover:text-[#1e3c72] dark:hover:text-gray-200 transition-colors duration-200">
-                Политика конфиденциальности
+                {t('footer_privacy')}
               </a>
               <a href="#" className="hover:text-[#1e3c72] dark:hover:text-gray-200 transition-colors duration-200">
-                Правила использования
+                {t('footer_terms')}
               </a>
               <a href="#" className="hover:text-blue-400 transition-colors duration-200">
-                Карта сайта
+                {t('footer_sitemap')}
               </a>
             </div>
           </div>
