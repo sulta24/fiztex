@@ -12,7 +12,6 @@ import {
   FiLogOut,
   FiSettings
 } from 'react-icons/fi'
-import ThemeToggle from './ThemeToggle'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -95,9 +94,6 @@ const Header = () => {
 
           {/* Controls */}
           <div className="flex items-center space-x-4">
-            {/* Theme Toggle */}
-            <ThemeToggle />
-
             {/* Language Selector */}
             <div className="relative">
               <button
