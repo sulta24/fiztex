@@ -53,44 +53,44 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 dark:bg-[#1e3c72]/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#1e428a] shadow-lg"
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link 
-            to="/" 
-            className="text-xl lg:text-2xl font-bold text-[#1e3c72] dark:text-white hover:text-[#2a5298] dark:hover:text-gray-200 transition-colors"
-          >
-            PhysTech School Almaty
-          </Link>
+          <div className="flex items-center" style={{minWidth: '150px', justifyContent: 'flex-start'}}>
+            <Link 
+              to="/" 
+              className="flex items-center h-16"
+            >
+              <img src="/images/fiztex-logo.png" alt="FIZTEX Logo" className="h-16 w-auto" />
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                  location.pathname === item.to
-                    ? 'text-[#1e3c72] dark:text-white border-b-2 border-[#1e3c72] dark:border-white'
-                    : 'text-gray-700 dark:text-white/80 hover:text-[#1e3c72] dark:hover:text-white'
-                }`}
-              >
-                {item.label}
-                {location.pathname === item.to && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#1e3c72] dark:bg-white"
-                  />
-                )}
-              </Link>
-            ))}
-          </nav>
+          <div className="flex-1 flex justify-center items-center absolute left-[47%] top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full pointer-events-none">
+            <nav className="hidden lg:flex items-center space-x-8 pointer-events-auto">
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                    location.pathname === item.to
+                      ? 'text-[#1e3c72] dark:text-white border-b-2 border-[#1e3c72] dark:border-white'
+                      : 'text-gray-700 dark:text-white/80 hover:text-[#1e3c72] dark:hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                  {location.pathname === item.to && (
+                    <motion.div
+                      layoutId="activeTab"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#1e3c72] dark:bg-white"
+                    />
+                  )}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
           {/* Controls */}
           <div className="flex items-center space-x-4">

@@ -188,10 +188,10 @@ const Teachers = () => {
                 variants={cardVariants}
                 className="flex-shrink-0 w-80 h-96 group"
               >
-                <div className="h-full bg-white dark:bg-[#223a5e] rounded-2xl p-6 border border-white/20 dark:border-[#2a5298] hover:bg-gray-100 dark:hover:bg-[#2a5298] transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl">
+                <div className="h-full bg-white dark:bg-[#223a5e] rounded-2xl p-6 border border-white/20 dark:border-[#2a5298] transition-all duration-300">
                   {/* Teacher Photo */}
                   <div className="relative mx-auto w-32 h-32 mb-6">
-                    <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/30 group-hover:border-white/50 transition-colors">
+                    <div className="w-full h-full rounded-full overflow-hidden border-4 border-white/30 transition-colors">
                       {teacher.photo_url ? (
                         <img
                           src={teacher.photo_url}

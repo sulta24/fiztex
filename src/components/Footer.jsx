@@ -162,13 +162,13 @@ const Footer = () => {
           {/* School Description */}
           <motion.div
             variants={itemVariants}
-            className="mt-16 pt-8 border-t border-[#1e3c72]/20 dark:border-white/20"
+            className="mt-16 border-t border-[#1e3c72]/20 dark:border-white/20 bg-[#1D428A] rounded-2xl shadow-xl px-4"
           >
-            <div className="max-w-4xl mx-auto text-center">
-              <h3 className="text-2xl font-bold text-[#1e3c72] dark:text-white mb-4">
-                {t('footer_school_name')}
-              </h3>
-              <p className="text-gray-600 dark:text-white/80 leading-relaxed text-lg">
+            <div className="max-w-4xl mx-auto text-center py-10">
+              <div className="flex justify-center items-center w-full mb-4">
+                <img src="/images/fixtex-logo2.png" alt="FIZTEX Logo" className="h-16 w-auto" />
+              </div>
+              <p className="text-white leading-relaxed text-lg">
                 {t('footer_school_desc')}
               </p>
             </div>

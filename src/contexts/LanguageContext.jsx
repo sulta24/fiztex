@@ -80,6 +80,9 @@ const translations = {
     confirmPassword: 'Подтвердите пароль',
     
     // Footer
+    schoolAddress: 'Адрес школы',
+    contactPhones: 'Контактные телефоны',
+    emailContacts: 'Электронная почта',
     footer_address: 'Адрес',
     footer_address_value: 'г. Алматы, ул. Школьная, д. 1',
     footer_index: 'Индекс',
@@ -198,6 +201,9 @@ const translations = {
     confirmPassword: 'Confirm Password',
     
     // Footer
+    schoolAddress: 'School Address',
+    contactPhones: 'Contact Phones',
+    emailContacts: 'Email Contacts',
     footer_address: 'Address',
     footer_address_value: '1 Shkolnaya St., Almaty',
     footer_index: 'Index',
@@ -316,6 +322,9 @@ const translations = {
     confirmPassword: 'Құпия сөзді растау',
     
     // Footer
+    schoolAddress: 'Мектеп мекенжайы',
+    contactPhones: 'Байланыс телефондары',
+    emailContacts: 'Электрондық пошта',
     footer_address: 'Мекенжай',
     footer_address_value: 'Алматы қ., Школьная к-сі, 1 үй',
     footer_index: 'Индекс',
