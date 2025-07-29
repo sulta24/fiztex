@@ -13,10 +13,22 @@ const Hero = () => {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Pattern - новый градиент */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-[#1e3c72] dark:to-[#2a5298]"></div>
-      <div className="absolute inset-0">
+    <section className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Фоновая картинка только для ноутбуков и компьютеров */}
+      <div className="hidden md:block absolute inset-0 z-0 bg-[#f3f6fa] transition-colors duration-500">
+        <img 
+          src="/images/main-page.png" 
+          alt="main background" 
+          className="w-full h-full object-cover object-center opacity-0 transition-opacity duration-700 hero-bg-img" 
+          style={{ filter: 'brightness(0.85)' }}
+          loading="eager"
+          fetchpriority="high"
+          onLoad={e => e.currentTarget.style.opacity = 1}
+        />
+      </div>
+      {/* Нет фоновой картинки на мобильной и desktop */}
+      {/* Удалён синий градиент */}
+      <div className="absolute inset-0 z-10">
         <div className="absolute top-20 left-10 w-20 h-20 bg-[#1e3c72]/10 dark:bg-white/10 rounded-full blur-xl"></div>
         <div className="absolute top-40 right-20 w-32 h-32 bg-[#2a5298]/5 dark:bg-white/5 rounded-full blur-2xl"></div>
         <div className="absolute bottom-32 left-1/4 w-40 h-40 bg-[#1e3c72]/8 dark:bg-white/8 rounded-full blur-3xl"></div>

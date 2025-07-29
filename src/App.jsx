@@ -24,7 +24,7 @@ function App() {
     <LanguageProvider>
       <ThemeProvider>
         <AuthProvider>
-          <div className="min-h-screen bg-white dark:bg-gradient-to-br dark:from-[#1e3c72] dark:to-[#2a5298] transition-all duration-300">
+          <div className="min-h-screen bg-[#f3f6fa] dark:bg-gradient-to-br dark:from-[#1e3c72] dark:to-[#2a5298] transition-all duration-500">
               <Routes>
                 {/* Auth Routes */}
                 <Route path="/login" element={<Login />} />

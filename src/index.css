@@ -192,3 +192,14 @@ select:focus-visible {
     line-height: 1.25rem;
   }
 } 
+
+@media (max-width: 640px) {
+  .hero-bg-img {
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: unset !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #f3f6fa;
+  }
+} 
